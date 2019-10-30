@@ -135,7 +135,13 @@ const data = [
 */
 
 
-function createArticle(title, date, para1, para2, para3) {
+function createArticle(dataObject) {
+
+    let title = dataObject.title
+    let date = dataObject.date
+    let para1 = dataObject.firstParagraph
+    let para2 = dataObject.secondParagraph
+    let para3 = dataObject.thirdParagraph
 
      // define new elements
     let article = document.createElement("div")
@@ -148,7 +154,12 @@ function createArticle(title, date, para1, para2, para3) {
 
     let mySpan = document.createElement("span")
     // Setup structure of elements
-    article.append(header2, paragraphDate, paragraph1, paragraph2, paragraph3, mySpan)
+    article.append(header2,
+                   paragraphDate,
+                   paragraph1,
+                   paragraph2,
+                   paragraph3,
+                   mySpan)
 
     // set class names
     article.classList.add("article")
@@ -167,7 +178,14 @@ function createArticle(title, date, para1, para2, para3) {
     mySpan.addEventListener("click", () => {
 
       article.classList.toggle("article-open")
-      mySpan.textContent = "colapse"
+      if(mySpan.textContent === "colapse") {
+        mySpan.textContent = "expand"
+
+      } else {
+        mySpan.textContent = "colapse"
+
+      }
+
     })
 
     return article
@@ -177,9 +195,5 @@ function createArticle(title, date, para1, para2, para3) {
 const myArticle = document.querySelector(".articles")
 
 data.forEach(dataObject => {
-  myArticle.appendChild(createArticle(dataObject.title, 
-                                      dataObject.date, 
-                                      dataObject.firstParagraph, 
-                                      dataObject.secondParagraph, 
-                                      dataObject.thirdParagraph))
+  myArticle.appendChild(createArticle(dataObject))
 })

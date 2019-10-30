@@ -42,6 +42,7 @@ function makeMenu(menuElement){
 
     // Setup structure of elements
     menu.appendChild(menuNames)
+    
     menuElement.forEach(menuString => {
 
       let myListItem = document.createElement("li")
@@ -54,22 +55,11 @@ function makeMenu(menuElement){
     menu.classList.add("menu")
 
     // set text content
-    // let set_nav_stuff = (arr1, arr2) => {
-    //   // 3 parameters for forEach: element, index, array_to_left_of_dot
-    //   arr1.forEach((k, i, array_to_left_of_dot) => {
-    //       k.innerHTML = siteContent["nav"][arr2[i]]
-    //       k.setAttribute("style", "color: green")
-    //       // console.log(k.attributes)
-    //       // k.color = "green"
-    // })
-    // menueObject
-    // };
-    // // console.log("here")
-    // set_nav_stuff(Array.from(nav.children), nav_items)
-    
+
     // set event listeners
     let myMenueButton = document.querySelector(".menu-button")
     myMenueButton.addEventListener("click", () => {
+      
       menu.classList.toggle("menu--open")
     })
     return menu
