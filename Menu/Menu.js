@@ -34,7 +34,7 @@ let menuItems = [
   
 */
 
-function makeMenue(menueObject){
+function makeMenu(menuElement){
 
     // define new elements
     let menu = document.createElement("div")
@@ -42,17 +42,44 @@ function makeMenue(menueObject){
 
     // Setup structure of elements
     menu.appendChild(menuNames)
-    menuItems.forEach(menueItem => {
+    menuElement.forEach(menuString => {
 
-      menuNames.appendChild(document.createElement("li"))
+      let myListItem = document.createElement("li")
+      myListItem.textContent = menuString
+      menuNames.appendChild(myListItem)
+
 
     })
-    
     // set class names
-    // menu.classList.add("menu")
+    menu.classList.add("menu")
 
     // set text content
-
+    // let set_nav_stuff = (arr1, arr2) => {
+    //   // 3 parameters for forEach: element, index, array_to_left_of_dot
+    //   arr1.forEach((k, i, array_to_left_of_dot) => {
+    //       k.innerHTML = siteContent["nav"][arr2[i]]
+    //       k.setAttribute("style", "color: green")
+    //       // console.log(k.attributes)
+    //       // k.color = "green"
+    // })
+    // menueObject
+    // };
+    // // console.log("here")
+    // set_nav_stuff(Array.from(nav.children), nav_items)
+    
     // set event listeners
-
+    let myMenueButton = document.querySelector(".menu-button")
+    myMenueButton.addEventListener("click", () => {
+      menu.classList.toggle("menu--open")
+    })
+    return menu
 }
+
+let myMenueSelector = document.querySelector(".header")
+
+
+// menuItems.forEach(dataText => {
+//   myMenueSelector.appendChild(makeMenu(dataText))
+// })
+
+myMenueSelector.appendChild(makeMenu(menuItems))
