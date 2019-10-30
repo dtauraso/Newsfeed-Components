@@ -200,7 +200,7 @@ myArticle.appendChild(createArticle({
 }))
 
 myArticle.appendChild(createArticle({
-  title: 'I\'m not going to suffer PG&E\'s stupid policy decisions each year',
+  title: 'I\'m not going to suffer PG&E\'s yearly stupid policy',
   date: 'Oct 30th, 2019',
   firstParagraph: `No power, no water`,
   secondParagraph: `I hope to get my first job out of lambda outside of firestate`,
