@@ -42,7 +42,7 @@ function makeMenu(menuElement){
 
     // Setup structure of elements
     menu.appendChild(menuNames)
-    
+
     menuElement.forEach(menuString => {
 
       let myListItem = document.createElement("li")
@@ -67,9 +67,5 @@ function makeMenu(menuElement){
 
 let myMenueSelector = document.querySelector(".header")
 
-
-// menuItems.forEach(dataText => {
-//   myMenueSelector.appendChild(makeMenu(dataText))
-// })
 
 myMenueSelector.appendChild(makeMenu(menuItems))
