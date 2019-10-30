@@ -85,6 +85,27 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'So tired of the fires',
+    date: 'Oct 30th, 2019',
+    firstParagraph: `this is a paragraph number 1`,
+    secondParagraph: `This is the second paragraph`,
+    thirdParagraph: `This is the third paragraph`
+  },
+  {
+    title: 'My life is now determined by wind speed',
+    date: 'Oct 30th, 2019',
+    firstParagraph: `No power, no water`,
+    secondParagraph: `We got some water and power back last night`,
+    thirdParagraph: `This is the next third paragraph`
+  },
+  {
+    title: 'I\'m not going to suffer PG&E\'s stupid policy decisions each year',
+    date: 'Oct 30th, 2019',
+    firstParagraph: `No power, no water`,
+    secondParagraph: `I hope to get my first job out of lambda outside of firestate`,
+    thirdParagraph: `This is the third third paragraph`
   }
 ];
 
@@ -137,9 +158,9 @@ function createArticle(title, date, para1, para2, para3) {
     // set text content
     header2.textContent = title
     paragraphDate.textContent = date
-    paragraph1 = para1
-    paragraph2 = para2
-    paragraph3 = para3
+    paragraph1.textContent = para1
+    paragraph2.textContent = para2
+    paragraph3.textContent = para3
 
     // set event listeners
     mySpan.addEventListener("click", () => {
