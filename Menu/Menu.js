@@ -33,3 +33,26 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+function makeMenue(menueObject){
+
+    // define new elements
+    let menu = document.createElement("div")
+    let menuNames = document.createElement("ul")
+
+    // Setup structure of elements
+    menu.appendChild(menuNames)
+    menuItems.forEach(menueItem => {
+
+      menuNames.appendChild(document.createElement("li"))
+
+    })
+    
+    // set class names
+    // menu.classList.add("menu")
+
+    // set text content
+
+    // set event listeners
+
+}

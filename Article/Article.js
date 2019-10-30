@@ -96,9 +96,9 @@ const data = [
   {
     title: 'My life is now determined by wind speed',
     date: 'Oct 30th, 2019',
-    firstParagraph: `No power, no water`,
+    firstParagraph: `No power, no water(our pump uses power to work)`,
     secondParagraph: `We got some water and power back last night`,
-    thirdParagraph: `This is the next third paragraph`
+    thirdParagraph: `Thanks PG&E for shutting our power down to save us from the repurcussions of decades of dumb infrastructure decisions`
   },
   {
     title: 'I\'m not going to suffer PG&E\'s stupid policy decisions each year',
@@ -161,11 +161,13 @@ function createArticle(title, date, para1, para2, para3) {
     paragraph1.textContent = para1
     paragraph2.textContent = para2
     paragraph3.textContent = para3
+    mySpan.textContent = "expand"
 
     // set event listeners
     mySpan.addEventListener("click", () => {
 
       article.classList.toggle("article-open")
+      mySpan.textContent = "colapse"
     })
 
     return article
