@@ -142,10 +142,21 @@ function createArticle(title, date, para1, para2, para3) {
     paragraph3 = para3
 
     // set event listeners
-    mySpan.addEventListener("click")
+    mySpan.addEventListener("click", () => {
+
+      article.classList.toggle("article-open")
+    })
 
     return article
 
 }
 
-const myHandle = document.querySelector("")
+const myArticle = document.querySelector(".articles")
+
+data.forEach(dataObject => {
+  myArticle.appendChild(createArticle(dataObject.title, 
+                                      dataObject.date, 
+                                      dataObject.firstParagraph, 
+                                      dataObject.secondParagraph, 
+                                      dataObject.thirdParagraph))
+})
