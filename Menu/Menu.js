@@ -60,6 +60,7 @@ function makeMenu(menuElement){
     let myMenueButton = document.querySelector(".menu-button")
     myMenueButton.addEventListener("click", () => {
       
+      // toggle is a light switch
       menu.classList.toggle("menu--open")
     })
     return menu

@@ -135,10 +135,11 @@ function createArticle(dataObject) {
     // Setup structure of elements
     article.append(header2,
                    paragraphDate,
+                   mySpan,
                    paragraph1,
                    paragraph2,
-                   paragraph3,
-                   mySpan)
+                   paragraph3
+                   )
 
     // set class names
     article.classList.add("article")
@@ -148,10 +149,15 @@ function createArticle(dataObject) {
     // set text content
     header2.textContent = title
     paragraphDate.textContent = date
+
     paragraph1.textContent = para1
+    
+
     paragraph2.textContent = para2
     paragraph3.textContent = para3
     mySpan.textContent = "expand"
+    article.style.overflow = 'scroll';
+
 
     // set event listeners
     mySpan.addEventListener("click", () => {
@@ -200,3 +206,4 @@ myArticle.appendChild(createArticle({
   secondParagraph: `I hope to get my first job out of lambda outside of firestate`,
   thirdParagraph: `This is the third third paragraph`
 }))
+
