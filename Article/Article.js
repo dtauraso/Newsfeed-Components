@@ -112,3 +112,98 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+function createArticle(dataObject) {
+
+    let title = dataObject.title
+    let date = dataObject.date
+    let para1 = dataObject.firstParagraph
+    let para2 = dataObject.secondParagraph
+    let para3 = dataObject.thirdParagraph
+
+     // define new elements
+    let article = document.createElement("div")
+    let header2 = document.createElement("h2")
+    let paragraphDate = document.createElement("p")
+
+    let paragraph1 = document.createElement("p")
+    let paragraph2 = document.createElement("p")
+    let paragraph3 = document.createElement("p")
+
+    let mySpan = document.createElement("span")
+    // Setup structure of elements
+    article.append(header2,
+                   paragraphDate,
+                   mySpan,
+                   paragraph1,
+                   paragraph2,
+                   paragraph3
+                   )
+
+    // set class names
+    article.classList.add("article")
+    paragraphDate.classList.add("date")
+    mySpan.classList.add("expandButton")
+
+    // set text content
+    header2.textContent = title
+    paragraphDate.textContent = date
+
+    paragraph1.textContent = para1
+    
+
+    paragraph2.textContent = para2
+    paragraph3.textContent = para3
+    mySpan.textContent = "expand"
+    article.style.overflow = 'scroll';
+
+
+    // set event listeners
+    mySpan.addEventListener("click", () => {
+
+      article.classList.toggle("article-open")
+      if(mySpan.textContent === "collapse") {
+        mySpan.textContent = "expand"
+
+      } else {
+        mySpan.textContent = "collapse"
+
+      }
+
+    })
+
+    return article
+
+}
+
+const myArticle = document.querySelector(".articles")
+
+data.forEach(dataObject => {
+  myArticle.appendChild(createArticle(dataObject))
+})
+
+myArticle.appendChild(createArticle({
+  title: 'So tired of the fires',
+  date: 'Oct 30th, 2019',
+  firstParagraph: `this is a paragraph number 1`,
+  secondParagraph: `This is the second paragraph`,
+  thirdParagraph: `This is the third paragraph`
+}))
+
+myArticle.appendChild(createArticle({
+  title: 'My life is now determined by wind speed',
+  date: 'Oct 30th, 2019',
+  firstParagraph: `No power, no water(our pump uses power to work)`,
+  secondParagraph: `We got some water and power back last night`,
+  thirdParagraph: `Thanks PG&E for shutting our power down to save us from the repurcussions of decades of dumb infrastructure decisions`
+}))
+
+myArticle.appendChild(createArticle({
+  title: 'I\'m not going to suffer PG&E\'s yearly stupid policy',
+  date: 'Oct 30th, 2019',
+  firstParagraph: `No power, no water`,
+  secondParagraph: `I hope to get my first job out of lambda outside of firestate`,
+  thirdParagraph: `This is the third third paragraph`
+}))
+
